@@ -46,6 +46,7 @@
 @include('sweetalert::alert')
 
 <div class="bg-white px-8 py-16">
+	@include('admins.partials._nav')
     @yield('content')
 </div>
 

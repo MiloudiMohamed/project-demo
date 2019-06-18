@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home</title>
+<title>LRI</title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="icon" href="images/favicon.ico">
@@ -92,6 +92,7 @@
     </div>
   </section>
 </header>
+@include('sweetalert::alert')
 
 @yield('content')
 

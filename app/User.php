@@ -55,4 +55,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Workshop::class);
     }
+
+    public function lectures()
+    {
+        return $this->hasMany(Lecture::class);
+    }
+
+    public function scopeNotAccepted($query)
+    {
+        return $query->where('accepted', false);
+    }
 }

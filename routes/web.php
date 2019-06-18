@@ -27,8 +27,20 @@ Route::get('/workshops/create', 'WorkshopsController@create')->name('workshops.c
 Route::get('/workshops/{workshop}', 'WorkshopsController@show')->name('workshops.show');
 Route::post('/workshops', 'WorkshopsController@store')->name('workshops.store');
 
+Route::get('/lectures', 'LecturesController@index')->name('lectures.index');
+Route::get('/lectures/create', 'LecturesController@create')->name('lectures.create');
+Route::get('/lectures/{lecture}', 'LecturesController@show')->name('lectures.show');
+Route::post('/lectures', 'LecturesController@store')->name('lectures.store');
+
 Route::view('/teacher', 'teacher')->name('teacher');
 Route::view('/about', 'about')->name('about');
+
+Route::get('/admins', 'AdminsController@index')->name('admins.index');
+
+Route::get('/admins/teachers', 'Admins\TeachersController@index')->name('admins.teachers.index');
+Route::patch('/admins/teachers/{teacher}', 'Admins\TeachersController@update')->name('admins.teachers.update');
+Route::delete('/admins/teachers/{teacher}', 'Admins\TeachersController@destroy')->name('admins.teachers.destroy');
+
 
 Auth::routes();
 
