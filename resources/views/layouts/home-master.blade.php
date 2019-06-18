@@ -86,7 +86,7 @@
         </div>
         <div class="grid_5">
           <h2>Strong <br> Stable <br> Safe</h2>
-          We help you run your business  in a successful way
+          We help you for take a information 
         </div>
       </div>
     </div>

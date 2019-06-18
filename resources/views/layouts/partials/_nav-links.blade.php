@@ -22,7 +22,9 @@
                     <li><a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('articles.create') }}">Add Article</a></li>
                     <li><a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('workshops.index') }}">Add Workshop</a></li>
                     <li><a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('lectures.index')}}">Add siminaire</a></li>
+                    <li><a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('lectures.index')}}">logout</a></li>
                 </ul>
+
             </li>
         </ul>
     @endauth
@@ -32,6 +34,7 @@
           <li><a class="px-4 py-2 border mr-2 rounded hover:text-white hover:bg-teal-500" href="/register">Register</a></li>
           <li><a class="hover:underline" href="/login">Login</a></li>
         </ul>
+         
     @endguest
 
 

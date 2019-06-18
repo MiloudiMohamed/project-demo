@@ -41,6 +41,18 @@ Route::get('/admins/teachers', 'Admins\TeachersController@index')->name('admins.
 Route::patch('/admins/teachers/{teacher}', 'Admins\TeachersController@update')->name('admins.teachers.update');
 Route::delete('/admins/teachers/{teacher}', 'Admins\TeachersController@destroy')->name('admins.teachers.destroy');
 
+Route::get('/admins/articles', 'Admins\ArticlesController@index')->name('admins.articles.index');
+Route::patch('/admins/articles/{article}', 'Admins\ArticlesController@update')->name('admins.articles.update');
+Route::delete('/admins/articles/{article}', 'Admins\ArticlesController@destroy')->name('admins.articles.destroy');
+
+Route::get('/admins/workshops', 'Admins\WorkshopsController@index')->name('admins.workshops.index');
+Route::patch('/admins/workshops/{workshop}', 'Admins\WorkshopsController@update')->name('admins.workshops.update');
+Route::delete('/admins/workshops/{workshop}', 'Admins\WorkshopsController@destroy')->name('admins.workshops.destroy');
+
+Route::get('/admins/lectures', 'Admins\LecturesController@index')->name('admins.lectures.index');
+Route::patch('/admins/lectures/{workshop}', 'Admins\LecturesController@update')->name('admins.lectures.update');
+Route::delete('/admins/lectures/{workshop}', 'Admins\LecturesController@destroy')->name('admins.lectures.destroy');
+
 
 Auth::routes();
 

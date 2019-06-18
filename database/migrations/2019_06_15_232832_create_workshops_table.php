@@ -20,6 +20,7 @@ class CreateWorkshopsTable extends Migration
             $table->string('address');
             $table->string('date');
             $table->string('places')->nullable();
+            $table->boolean('approved')->default(false);
             $table->timestamps();
         });
     }

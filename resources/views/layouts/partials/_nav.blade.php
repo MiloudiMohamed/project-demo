@@ -11,9 +11,7 @@
     </div>
   </div>
   <section id="stuck_container">
-  <!--==============================
-              Stuck menu
-  =================================-->
+
     <div class="container">
       <div class="row">
         <div class="grid_12 ">

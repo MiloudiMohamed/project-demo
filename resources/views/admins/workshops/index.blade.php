@@ -15,23 +15,23 @@
     			</tr>
     		</thead>
     		<tbody>
-    			@forelse($articles as $article)
+    			@forelse($workshps as $workshop)
     				<tr class="">
-    					<td class="px-4 py-2 border text-center">{{ $article->name }}</td>
-    					<td class="px-4 py-2 border text-center">{{ $article->email }}</td>
-    					<td class="px-4 py-2 border text-center">{{ $article->domain }}</td>
-    					<td class="px-4 py-2 border text-center">{{ $article->level }}</td>
-    					<td class="px-4 py-2 border text-center">{{ $article->department }}</td>
+    					<td class="px-4 py-2 border text-center">{{ $workshop->name }}</td>
+    					<td class="px-4 py-2 border text-center">{{ $workshop->email }}</td>
+    					<td class="px-4 py-2 border text-center">{{ $workshop->domain }}</td>
+    					<td class="px-4 py-2 border text-center">{{ $workshop->level }}</td>
+    					<td class="px-4 py-2 border text-center">{{ $workshop->department }}</td>
     					<td class="px-4 py-2 border text-center flex justify-center">
     						<div class="mr-6">
-	    						<form action="{{ route('admins.articles.update', $article->id) }}" method="POST">
+	    						<form action="{{ route('admins.workshops.update', $workshop->id) }}" method="POST">
 	    							@csrf
 	    							@method('PATCH')
 	    							<button type="submit" class="text-xs px-4 py-1 bg-green-500 text-white rounded-lg hover:bg-green-700">Accept</button>	
 	    						</form>
     						</div>
     						<div>
-	    						<form action="{{ route('admins.teachers.destroy', $article->id) }}" method="POST">
+	    						<form action="{{ route('admins.workshops.destroy', $workshop->id) }}" method="POST">
 	    							@csrf
 	    							@method('DELETE')
 	    							<button type="submit" class="text-xs px-4 py-1 bg-red-500 text-white rounded-lg hover:bg-red-700">Delete</button>	

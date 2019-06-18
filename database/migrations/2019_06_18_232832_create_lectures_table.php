@@ -20,6 +20,7 @@ class CreateLecturesTable extends Migration
             $table->string('address');
             $table->string('date');
             $table->string('domain');
+            $table->boolean('approved')->default(false);
             $table->timestamps();
         });
     }

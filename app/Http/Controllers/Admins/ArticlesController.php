@@ -6,29 +6,29 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TeachersController extends Controller
+class ArticlesController extends Controller
 {
     public function index()
     {
-    	$teachers = User::notAccepted()->get();
+    	$articles = User::notAccepted()->get();
 
-    	return view('admins.teachers.index', compact('teachers'));
+    	return view('admins.articles.index', compact('articles'));
     }
 
-    public function update(User $teacher)
+    public function update(User $article)
     {
-    	$teacher->update([
+    	$article->update([
     		'accepted' => true,
     	]);
 
-    	alert()->success('Accepted','The teacher has been accepted.')->showCloseButton();
+    	alert()->success('Accepted','The article has been accepted.')->showCloseButton();
 
     	return back();
     }
 
-    public function destroy(User $teacher)
+    public function destroy(User $article)
     {
-    	$teacher->delete();
+    	$articel->delete();
 
     	return back();
     }
