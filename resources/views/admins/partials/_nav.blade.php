@@ -6,15 +6,15 @@
 			</li>
 
 			<li class="px-6 py-4">
-				<a class="font-semibold hover:text-teal-500 hover:underline" href="#">Lectures</a>
+				<a class="font-semibold hover:text-teal-500 hover:underline" href="{{  route('admins.lectures.index')}}">Lectures</a>
 			</li>
 
 			<li class="px-6 py-4">
-				<a class="font-semibold hover:text-teal-500 hover:underline" href="#">Articles</a>
+				<a class="font-semibold hover:text-teal-500 hover:underline" href="{{  route('admins.articles.index')}}">Articles</a>
 			</li>
 
 			<li class="px-6 py-4">
-				<a class="font-semibold hover:text-teal-500 hover:underline" href="#">Workshops</a>
+				<a class="font-semibold hover:text-teal-500 hover:underline" href="{{  route('admins.workshops.index')}}">Workshops</a>
 			</li>
 
 			<li class="px-6 py-4">

@@ -50,8 +50,8 @@ Route::patch('/admins/workshops/{workshop}', 'Admins\WorkshopsController@update'
 Route::delete('/admins/workshops/{workshop}', 'Admins\WorkshopsController@destroy')->name('admins.workshops.destroy');
 
 Route::get('/admins/lectures', 'Admins\LecturesController@index')->name('admins.lectures.index');
-Route::patch('/admins/lectures/{workshop}', 'Admins\LecturesController@update')->name('admins.lectures.update');
-Route::delete('/admins/lectures/{workshop}', 'Admins\LecturesController@destroy')->name('admins.lectures.destroy');
+Route::patch('/admins/lectures/{lecture}', 'Admins\LecturesController@update')->name('admins.lectures.update');
+Route::delete('/admins/lectures/{lecture}', 'Admins\LecturesController@destroy')->name('admins.lectures.destroy');
 
 
 Auth::routes();

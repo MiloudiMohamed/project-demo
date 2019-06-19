@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admins;
 
-use App\User;
+use App\Workshop;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -10,15 +10,15 @@ class WorkshopsController extends Controller
 {
     public function index()
     {
-    	$workshops = User::notAccepted()->get();
+    	$workshops = Workshop::notApproved()->get();
 
-    	return view('admins.workshops .index', compact('workshops '));
+    	return view('admins.workshops.index', compact('workshops'));
     }
 
-    public function update(User $workshop )
+    public function update(Workshop $workshop)
     {
     	$workshop->update([
-    		'accepted' => true,
+    		'approved' => true,
     	]);
 
     	alert()->success('Accepted','The workshop has been accepted.')->showCloseButton();
@@ -26,7 +26,7 @@ class WorkshopsController extends Controller
     	return back();
     }
 
-    public function destroy(User $workshop)
+    public function destroy(Workshop $workshop)
     {
     	$workshop->delete();
 

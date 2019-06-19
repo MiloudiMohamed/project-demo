@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admins;
 
-use App\User;
+use App\Article;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -10,15 +10,15 @@ class ArticlesController extends Controller
 {
     public function index()
     {
-    	$articles = User::notAccepted()->get();
+    	$articles = Article::notApproved()->get();
 
     	return view('admins.articles.index', compact('articles'));
     }
 
-    public function update(User $article)
+    public function update(Article $article)
     {
     	$article->update([
-    		'accepted' => true,
+    		'approved' => true,
     	]);
 
     	alert()->success('Accepted','The article has been accepted.')->showCloseButton();
@@ -26,7 +26,7 @@ class ArticlesController extends Controller
     	return back();
     }
 
-    public function destroy(User $article)
+    public function destroy(Article $article)
     {
     	$articel->delete();
 

@@ -21,8 +21,15 @@
                 <ul id="dropdown" class="absolute hidden bg-white block mt-2 py-2 rounded shadow-md text-gray-700 text-sm w-40">
                     <li><a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('articles.create') }}">Add Article</a></li>
                     <li><a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('workshops.index') }}">Add Workshop</a></li>
-                    <li><a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('lectures.index')}}">Add siminaire</a></li>
-                    <li><a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('lectures.index')}}">logout</a></li>
+                    <li><a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('lectures.index')}}">Add Lecture</a></li>
+                    <li>
+                      <a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        Logout
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                      </a>
+                    </li>
                 </ul>
 
             </li>
@@ -34,7 +41,7 @@
           <li><a class="px-4 py-2 border mr-2 rounded hover:text-white hover:bg-teal-500" href="/register">Register</a></li>
           <li><a class="hover:underline" href="/login">Login</a></li>
         </ul>
-         
+
     @endguest
 
 

@@ -12,4 +12,9 @@ class Lecture extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function scopeNotApproved($query)
+    {
+        return $query->where('approved', false);
+    }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admins;
 
-use App\User;
+use App\Lecture;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -10,15 +10,15 @@ class LecturesController extends Controller
 {
     public function index()
     {
-    	$lectures = User::notAccepted()->get();
+    	$lectures = Lecture::notApproved()->get();
 
-    	return view('admins.lectures .index', compact('lectures '));
+    	return view('admins.lectures.index', compact('lectures'));
     }
 
-    public function update(User $lecture )
+    public function update(Lecture $lecture)
     {
     	$lecture->update([
-    		'accepted' => true,
+    		'approved' => true,
     	]);
 
     	alert()->success('Accepted','The lecture has been accepted.')->showCloseButton();
@@ -26,7 +26,7 @@ class LecturesController extends Controller
     	return back();
     }
 
-    public function destroy(User $lecture)
+    public function destroy(Lecture $lecture)
     {
     	$lecture->delete();
 
