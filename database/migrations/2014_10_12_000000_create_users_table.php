@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('domain');
             $table->string('department');
             $table->string('level');
+            $table->string('link');
             $table->string('avatar')->nullable();
             $table->boolean('leader')->default(false);
             $table->timestamp('email_verified_at')->nullable();

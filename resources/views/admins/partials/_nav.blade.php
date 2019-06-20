@@ -18,7 +18,7 @@
 			</li>
 
 			<li class="px-6 py-4">
-				<a class="font-semibold hover:text-teal-500 hover:underline" href="#">Teams</a>
+				<a class="font-semibold hover:text-teal-500 hover:underline" href="{{ route('admins.teams.index') }}">Teams</a>
 			</li>
 
 		</ul>

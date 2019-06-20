@@ -82,10 +82,24 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="link" class="col-md-4 col-form-label text-md-right">link</label>
+
+                            <div class="col-md-6">
+                                <input id="link" type="link" class="form-control @error('link') is-invalid @enderror" name="link" value="{{ old('link') }}" required autocomplete="link">
+
+                                @error('link')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">Avatar</label>
 
                             <div class="col-md-6">
-                                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar">
+                                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" autocomplete="avatar">
 
                                 @error('avatar')
                                     <span class="invalid-feedback" role="alert">

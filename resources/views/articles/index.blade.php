@@ -4,7 +4,7 @@
 
     <div class="mx-64 flex flex-wrap">
 
-        @foreach([1, 2, 3, 4] as $i)
+        
         @foreach($articles as $article)
         <div class="px-2 py-6 w-1/3">
             <div class="border px-2 pb-4 rounded hover:shadow trans-25">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        @endforeach
+       
         @endforeach
     </div>
 

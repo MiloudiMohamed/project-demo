@@ -74,7 +74,8 @@ class RegisterController extends Controller
             'domain' => $data['domain'],
             'department' => $data['department'],
             'level' => $data['level'],
-            'avatar' => request()->file('avatar')->store('public/'),
+            'link' => $data['link'],
+            'avatar' => request()->file('avatar')->store('public'),
         ]);
 
     }

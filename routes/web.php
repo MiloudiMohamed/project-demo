@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('test', function() {
+	dd(auth()->user()->is_accepted);
+});
+
 Route::view('/', 'home')->name('home');
 Route::view('/contact', 'contact')->name('contact');
 
@@ -32,8 +36,9 @@ Route::get('/lectures/create', 'LecturesController@create')->name('lectures.crea
 Route::get('/lectures/{lecture}', 'LecturesController@show')->name('lectures.show');
 Route::post('/lectures', 'LecturesController@store')->name('lectures.store');
 
-Route::view('/teacher', 'teacher')->name('teacher');
 Route::view('/about', 'about')->name('about');
+
+Route::get('/teacher', 'TeachersController@index')->name('teachers.index');
 
 Route::get('/admins', 'AdminsController@index')->name('admins.index');
 
@@ -53,6 +58,9 @@ Route::get('/admins/lectures', 'Admins\LecturesController@index')->name('admins.
 Route::patch('/admins/lectures/{lecture}', 'Admins\LecturesController@update')->name('admins.lectures.update');
 Route::delete('/admins/lectures/{lecture}', 'Admins\LecturesController@destroy')->name('admins.lectures.destroy');
 
+Route::get('/admins/teams', 'Admins\TeamsController@index')->name('admins.teams.index');
+Route::get('/admins/teams/create', 'Admins\TeamsController@create')->name('admins.teams.create');
+Route::post('/admins/teams', 'Admins\TeamsController@store')->name('admins.teams.store');
 
 Auth::routes();
 

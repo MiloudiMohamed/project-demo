@@ -18,6 +18,8 @@ class User extends Authenticatable
      */
     protected $guarded = [];
 
+    protected $appends = ['accepted'];
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -39,6 +41,19 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+
+    public function getIsAcceptedAttribute()
+    {
+        return !!  $this->accepted;
+    }
+
+    public function getAvatarAttribute($value)
+    {
+        if ($value) {
+            return "/storage/{$value}";
+        }
+        return asset('/img/user.png');
     }
 
     public function team()
@@ -64,5 +79,15 @@ class User extends Authenticatable
     public function scopeNotAccepted($query)
     {
         return $query->where('accepted', false);
+    }
+
+    public function scopeAccepted($query)
+    {
+        return $query->where('accepted', true);
+    }
+
+    public function scopeDoesntHaveTeam($query)
+    {
+        return $query->where('team_id',  null);
     }
 }

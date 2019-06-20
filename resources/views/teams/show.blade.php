@@ -10,28 +10,30 @@
 
         <div class="flex flex-col justify-center items-center px-6 py-4 mb-2 border-b bg-gray-100 px-6">
           <div class="flex justify-center items-center">
-            <img class="w-24 rounded-full" src="{{ asset('img/default.jpg') }}" alt="">
+            <img class="w-24 h-24 rounded-full object-cover" src="{{ $team->leader()->avatar }}" alt="">
           </div>
           <div class="flex flex-col px-4 py-2 text-center">
             <h1 class="text-lg font-bold mb-1">{{ $team->leader()->name }}</h1>
             <p class="">{{ $team->leader()->domain }}</p>
             <p class="">{{ $team->leader()->level }}</p>
             <p class="">Joined {{ $team->leader()->created_at->format('M, Y') }}</p>
+
             <a href="#" class="text-teal-500 hover:text-teal-700 hover:underline">See profile</a>
           </div>
         </div>
-
+        
         <div class="flex justify-between flex-wrap px-6">
           @foreach($team->crew() as $member)
             <div class="flex px-6 py-4 mb-2">
               <div class="flex justify-center items-center">
-                <img class="w-16 rounded-full" src="{{ asset('img/default.jpg') }}" alt="">
+                <img class="w-16 h-16 object-cover rounded-full" src="{{ $member->avatar }}" alt="">
               </div>
               <div class="flex flex-col px-4 py-2">
                 <h1 class="text-base font-bold mb-1">{{ $member->name }}</h1>
                 <p class="mb-1 text-xs">{{ $member->domain }}</p>
                 <p class="mb-1 text-xs">{{ $member->level }}</p>
                 <p class="mb-1 text-xs">{{ $member->created_at->format('M, Y') }}</p>
+
                 <a href="#" class="text-teal-500 hover:text-teal-700 hover:underline">See profile</a>
               </div>
             </div>
