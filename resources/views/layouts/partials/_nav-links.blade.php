@@ -17,7 +17,7 @@
             @endif
 
             <li>
-                <a href="#" class="px-4 py-2" href="/register" onclick="event.preventDefault(); document.getElementById('dropdown').classList.toggle('hidden')">{{ auth()->user()->name }} + </a>
+                <a href="#" class="px-4 py-2" onclick="event.preventDefault(); document.getElementById('dropdown').classList.toggle('hidden')">{{ auth()->user()->name }} + </a>
                 <ul id="dropdown" class="absolute hidden bg-white block mt-2 py-2 rounded shadow-md text-gray-700 text-sm w-40">
                     <li><a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('articles.create') }}">Add Article</a></li>
                     <li><a class="block py-2 px-4 hover:bg-gray-100" href="{{ route('workshops.index') }}">Add Workshop</a></li>

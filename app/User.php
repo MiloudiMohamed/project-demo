@@ -18,7 +18,7 @@ class User extends Authenticatable
      */
     protected $guarded = [];
 
-    protected $appends = ['accepted'];
+    protected $appends = ['accepted', 'avatar'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -59,6 +59,11 @@ class User extends Authenticatable
     public function team()
     {
         return $this->belongsTo(Role::class);
+    }
+
+    public function canLead()
+    {
+        return $this->level === 'A';
     }
 
     public function articles()

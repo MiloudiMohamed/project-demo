@@ -61,6 +61,8 @@ Route::delete('/admins/lectures/{lecture}', 'Admins\LecturesController@destroy')
 Route::get('/admins/teams', 'Admins\TeamsController@index')->name('admins.teams.index');
 Route::get('/admins/teams/create', 'Admins\TeamsController@create')->name('admins.teams.create');
 Route::post('/admins/teams', 'Admins\TeamsController@store')->name('admins.teams.store');
+Route::patch('/admins/teams/{team}', 'Admins\TeamsController@update')->name('admins.teams.update');
+Route::get('/admins/teams/{team}/edit', 'Admins\TeamsController@edit')->name('admins.teams.edit');
 
 Auth::routes();
 

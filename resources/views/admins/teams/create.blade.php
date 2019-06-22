@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-	
+
 @section('content')
 
     <div class="mx-64 shadow-lg px-12 rounded-lg mt-8">
@@ -22,12 +22,24 @@
 
                     <div class="mb-4">
                         <p class="mb-2">Description</p>
-                        <input name="description" class="block px-2 py-2 rounded-lg w-full border focus:border-teal-500">
+                        <textarea rows="7" name="description" class="block px-2 py-2 rounded-lg w-full border focus:border-teal-500"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <p class="mb-2">Leader</p>
+                        <select class="w-1/2 px-4 py-2 border rounded-lg" name="leader" id="" required>
+                            <option value="">Select a leader</option>
+                            @foreach($leaders as $teacher)
+                                @if($teacher->canLead())
+                                    <option value="{{ $teacher->id }}" >{{ $teacher->name }}</option>
+                                @endif()
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="mt-6 flex flex-wrap h-64 border overflow-y-scroll px-4 py-4">
                     	@foreach($teachers as $teacher)
-                    	<div class="flex w-1/3 w-32 items-center mb-6">
+                    	<div class="flex w-1/3 w-32 items-start mb-6">
                     		<img class="w-12 rounded-full mr-2" src="{{ $teacher->avatar }}">
                     		<label>
 	                    		<div class="flex flex-col text-sm">
