@@ -8,8 +8,11 @@ use Illuminate\Http\Request;
 class LecturesController extends Controller
 {
     public function index()
+
     {
-        return view('lectures.create');
+                $lectures = Lecture::latest()->get();
+
+        return view('lectures.index',compact('lectures'));
     }
 
     public function create()

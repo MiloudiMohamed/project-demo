@@ -9,7 +9,9 @@ class WorkshopsController extends Controller
 {
     public function index()
     {
-        return view('workshops.create');
+        $workshops = Workshop::latest()->get();
+
+        return view('workshops.index', compact('workshops'));
     }
 
     public function create()

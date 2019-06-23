@@ -4,8 +4,8 @@
        <li><a href="{{ route('teams.index') }}">Teams</a></li>
        <li><a href="{{ route('teachers.index') }}">Professors</a></li>
        <li><a href="{{ route('articles.index') }}">Articles</a></li>
-       <li><a href="{{ route('about') }}">About</a></li>
-       <li><a href="{{ route('contact') }}">Contacts</a></li>
+         <li><a href="{{ route('lectures.index') }}">lectures</a></li>
+       <li><a href="{{ route('workshops.index') }}">workshops</a></li>
     </ul>
 
     @auth
